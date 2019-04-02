@@ -1,0 +1,9 @@
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Release\MyNotepad.exe.config
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Release\MyNotepad.exe
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Release\MyNotepad.pdb
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Release\MyNotepad.csprojResolveAssemblyReference.cache
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Release\MyNotepad.MyNotepad.resources
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Release\MyNotepad.Properties.Resources.resources
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Release\MyNotepad.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Release\MyNotepad.exe
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Release\MyNotepad.pdb

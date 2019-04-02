@@ -1,0 +1,11 @@
+D:\visual studio 2015\Projects\VisualC++Practice\MFC_project\MyNotepad\MyNotepad\bin\Debug\MyNotepad.exe.config
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Debug\MyNotepad.exe.config
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Debug\MyNotepad.exe
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Debug\MyNotepad.pdb
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Debug\MenuTemplate.dll
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\bin\Debug\MenuTemplate.pdb
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Debug\MyNotepad.MyNotepad.resources
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Debug\MyNotepad.Properties.Resources.resources
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Debug\MyNotepad.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Debug\MyNotepad.exe
+D:\visual studio 2015\Projects\C#Practice\MyNotepad\MyNotepad\obj\Debug\MyNotepad.pdb
