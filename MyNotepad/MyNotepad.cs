@@ -16,7 +16,6 @@ namespace MyNotepad
         bool isNewFile = false;
         string tempappname;
         string combined_appname;
-        static bool isTextChanged = false;
         string originalText;
         public MyNotepad()
         {
@@ -117,7 +116,7 @@ namespace MyNotepad
         {
             //string inputtext = contentRichTextBox.Text;
 
-            if (isNewFile == true)
+            if (isNewFile == true && !File.Exists(filename))
             {
                 saveAsToolStripMenuItem_Click(sender, e);
             }
@@ -125,11 +124,16 @@ namespace MyNotepad
             {
                 using (StreamWriter writer = new StreamWriter(filename))
                 {
-                    await writer.WriteLineAsync(contentRichTextBox.Text);
+                    
+                    foreach (string line in contentRichTextBox.Lines)
+                    {
+                        await writer.WriteLineAsync(line);
+                    }
                     MessageBox.Show("Text written to file", "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     originalText = contentRichTextBox.Text;
                 }
             }
+            this.Text = filename + combined_appname;
         }
 
         private bool isContentChanged()
@@ -144,20 +148,12 @@ namespace MyNotepad
         {
             if (e.KeyChar >= 0|| e.KeyChar <= 255)// && isTextChanged == false)
             {
-                isTextChanged = true;
-                //if (isContentChanged())
-                //{
-                //    tempappname = this.Text;
-                //    this.Text = "*" + tempappname;
-                //    this.Update();
-                //}
-                //else
-                //{
-                //    this.Text = tempappname;
-                //    this.Update();
-                //}
+                if (isContentChanged())
+                {
+                    if (!this.Text.StartsWith("*"))
+                        this.Text = "*" + this.Text;
+                }
             }
-            
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -185,13 +181,17 @@ namespace MyNotepad
 
                 using (StreamWriter writer = new StreamWriter(disk_filename))
                 {
-                    await writer.WriteLineAsync(contentRichTextBox.Text);
+                    foreach (string line in contentRichTextBox.Lines)
+                    {
+                        await writer.WriteLineAsync(line);
+                    }
                     MessageBox.Show("Text written to file", "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     originalText = contentRichTextBox.Text;
                     this.Text = disk_filename + combined_appname;
+                    filename = disk_filename;
                 }
             }
-
+            this.Text = filename + combined_appname;
         }
 
         private void contentRichTextBox_SelectionChanged(object sender, EventArgs e)
@@ -216,17 +216,7 @@ namespace MyNotepad
             {
                 AddLineNumbers();
             }
-            if (isContentChanged())
-            {
-                tempappname = this.Text;
-                this.Text = "*" + tempappname;
-                this.Update();
-            }
-            else
-            {
-                this.Text = tempappname;
-                this.Update();
-            }
+            
         }
 
         private void MyNotepad_Resize(object sender, EventArgs e)
@@ -247,6 +237,17 @@ namespace MyNotepad
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             contentRichTextBox.Paste();
+        }
+
+        private void fontsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //fontDialog.ShowDialog();
+            
+
+            if (fontDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                contentRichTextBox.SelectionFont = fontDialog.Font;
+            }
         }
     }
 }
