@@ -64,7 +64,6 @@ namespace MyNotepad
             // set LineNumberTextBox text to null & width to getWidth() function value    
             lineNumberTextBox.Text = "";
             lineNumberTextBox.Width = getWidth();
-            //contentRichTextBox.Width = this.Width - getWidth();
             // now add each line number to LineNumberTextBox upto last line    
             for (int i = First_Line; i < Last_Line+1; i++)
             {
@@ -114,8 +113,6 @@ namespace MyNotepad
 
         private async void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string inputtext = contentRichTextBox.Text;
-
             if (isNewFile == true && !File.Exists(filename))
             {
                 saveAsToolStripMenuItem_Click(sender, e);
@@ -146,7 +143,7 @@ namespace MyNotepad
 
         private void contentRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 0|| e.KeyChar <= 255)// && isTextChanged == false)
+            if (e.KeyChar >= 0|| e.KeyChar <= 255)
             {
                 if (isContentChanged())
                 {
@@ -241,9 +238,6 @@ namespace MyNotepad
 
         private void fontsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //fontDialog.ShowDialog();
-            
-
             if (fontDialog.ShowDialog() != DialogResult.Cancel)
             {
                 contentRichTextBox.SelectionFont = fontDialog.Font;
